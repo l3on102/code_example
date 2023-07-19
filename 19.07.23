@@ -1,0 +1,117 @@
+package io.hexlet;
+
+class App {
+    // BEGIN (write your solution here)
+   public static String getFigureSquare (Geometric Figure){
+    var figureName = Figure.getName();
+    var square = Figure.getSquare();
+    return "Square of " + figureName + " is " + square;
+   }
+    // END
+}
+
+package io.hexlet;
+
+// BEGIN (write your solution here)
+interface Geometric {
+String getName();
+double getSquare();
+
+
+} 
+// END
+
+package io.hexlet;
+
+// BEGIN (write your solution here)
+class Quadrate implements Geometric {
+
+private int side;
+
+Quadrate(int side) {
+    this.side = side ;
+}
+
+public double getSquare () {
+    return side * side ;
+    
+}
+
+public String getName () {
+    return "quadrate";
+} 
+}
+
+
+
+// END
+
+package io.hexlet;
+
+class Circle implements Geometric {
+
+    private int radius;
+
+    Circle(int radius) {
+        this.radius = radius;
+    }
+
+    public double getSquare() {
+        var square = Math.PI * radius * radius;
+        return square;
+    }
+
+    public String getName() {
+        return "circle";
+    }
+}package io.hexlet;
+
+class Circle implements Geometric {
+
+    private int radius;
+
+    Circle(int radius) {
+        this.radius = radius;
+    }
+
+    public double getSquare() {
+        var square = Math.PI * radius * radius;
+        return square;
+    }
+
+    public String getName() {
+        return "circle";
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////
+
+package io.hexlet;
+
+import java.util.Arrays;
+
+class App {
+    public static int[] getSameParity(int[] numbers) {
+        var size = numbers.length;
+        int[] newarr = new int[size];
+
+        var index = 0;
+        for (var i = 0; i < numbers.length; i++) {
+
+            if (numbers[0] % 2 == 0) {
+                if (numbers[i] % 2 == 0) {
+                    newarr[index] = numbers[i];
+                    index++;
+                }
+            }
+            if (Math.abs(numbers[0]) % 2 == 1) {
+                if (Math.abs(numbers[i]) % 2 == 1) {
+                    newarr[index] = numbers[i];
+                    index++;
+                }
+            }
+        }
+            //System.out.println(Arrays.toString(newarr));
+            //System.out.println(Arrays.toString(Arrays.copyOfRange(newarr,0,index)));
+        return Arrays.copyOfRange(newarr, 0, index);
+    }
+}
